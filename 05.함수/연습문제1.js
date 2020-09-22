@@ -22,6 +22,5 @@
             console.log(power(Sum2)); //N까지 합의 제곱
             rl.close();
     });
-    
-    
+
     
