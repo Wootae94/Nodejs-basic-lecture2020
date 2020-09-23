@@ -7,11 +7,11 @@
                    if(power(a) + power(b) === power(c)){
                        if(a+b+c===1000){
                            console.log(a,b,c);
-                       }
-                } 
+                        }
+                    } 
+                }
             }
         }
-    }
    } 
     
     

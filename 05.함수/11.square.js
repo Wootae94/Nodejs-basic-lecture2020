@@ -18,8 +18,8 @@
         for(let i=1; i<=Num; i++)
         {Sum1+=power(i);
          Sum2+=i}
-            console.log(Sum1); //N 의 제곱의 합
-            console.log(power(Sum2)); //N까지 합의 제곱
+            console.log(`1에서 ${Num}까지 제곱의 합> ${Sum1}`); //N 의 제곱의 합
+            console.log(`1에서 ${Num}까지 합의 제곱> ${power(Sum2)}`); //N까지 합의 제곱
             rl.close();
     });
 
