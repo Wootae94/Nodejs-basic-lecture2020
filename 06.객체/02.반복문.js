@@ -1,5 +1,3 @@
-const { HTML5_FMT } = require("moment")
-
 let person = 
     {name: '홍길동', gender: '남자', age: 29}
     
