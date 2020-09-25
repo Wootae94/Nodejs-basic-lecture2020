@@ -14,7 +14,7 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-rl.setPrompt('> ');
+rl.setPrompt('> '); 
 rl.prompt();
 
 let input = '';
