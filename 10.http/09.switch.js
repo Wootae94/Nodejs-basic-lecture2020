@@ -24,7 +24,7 @@ switch(pathname){
         break;
     default :
         res.writeHead(404, {'Content-Type': 'text/html'});
-        res.end()
+        res.end();
 }
 });
 server.listen(3000, () => {
