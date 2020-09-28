@@ -10,6 +10,7 @@ module.exports = {
     },
     sum : function (x){
         x+=1;
-    }
+    },
+    Name : '김태우'
 }
 

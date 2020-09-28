@@ -11,6 +11,6 @@ console.log(`\u001b[33m`, 'Hello World.. !');
 console.log(`\u001b[34m`, 'Hello World.. !');
 console.log(`\u001b[35m`, 'Hello World.. !');
 console.log(`\u001b[36m`, 'Hello World.. !');
-
+console.log(`\u001b[37m`, 'Hello World.. !');
 // 초기화합니다.
 console.log('\u001b[0m');
