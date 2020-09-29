@@ -51,7 +51,8 @@ http.createServer((req, res) => {
                 let param = qs.parse(body);
                 let filepath = 'data/' + param.subject + '.txt';
                 fs.writeFile(filepath,param.description, error => {
-                    res.writeHead(302,{'Location': `/?id=${param.subject}`});
+                    let encoded= encodeURI( `/?id=${param.subject}`);
+                    res.writeHead(302,{'Location': encoded});
                     res.end();
                 });
             });
@@ -101,15 +102,21 @@ http.createServer((req, res) => {
                 let param = qs.parse(body);
                 let filepath = 'data/' + param.original + '.txt';
                 fs.writeFile(filepath,param.description, error => {
-                    if(param.original !== param.subject) {
+                    let encoded= encodeURI( `/?id=${param.subject}`);
+                    /* if(param.original !== param.subject) {
                         fs.rename(filepath, `data/${param.subject}.txt`, error => {
-                            res.writeHead(302,{'Location': `/?id=${param.subject}`});
+                            res.writeHead(302,{'Location': encoded});
                             res.end();
                         })
                     } else {
-                        res.writeHead(302,{'Location': `/?id=${param.subject}`});
+                        res.writeHead(302,{'Location': encoded});
                         res.end();
-                    }
+                    } */
+                    if(param.original !== param.subject) {                          // Sync이용해서 code 단축
+                        fs.renameSync(filepath, `data/${param.subject}.txt`);
+                    } 
+                    res.writeHead(302,{'Location': encoded});
+                    res.end();
                 });
             });
         
