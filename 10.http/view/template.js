@@ -38,7 +38,7 @@ module.exports= {
                     <td><label>내용</label></td>
                     <td><textarea name ="description" cols="40" rows="5"></textarea></td>
                 </tr>
-                <tr colspan="2" style="text-align">
+                <tr colspan="2" style="text-align: center;">
                 <td><input type="submit" value="생성" > </td>
                 </tr>
             </table>
@@ -53,5 +53,26 @@ module.exports= {
             <input type="submit" value="삭제" >
         </form>
         `;
+    },
+    updateForm: function(subject,description){
+        return `
+        <form method ="POST" action="/update_proc">
+        <input type="hidden" name="original" value=${subject}>
+        <table>
+            <tr>
+                <td><label>제목</label></td>
+                <td><input type="text" name="subject" value=${subject}></td>
+            </tr>
+            <tr>
+                <td><label>내용</label></td>
+                <td><textarea name ="description" cols="40" rows="5">${description}</textarea></td>
+            </tr>
+            <tr colspan="2" style="text-align: center;">
+            <td><input type="submit" value="수정"> </td>
+            </tr>
+        </table>
+    </form>
+    `;
+        
     }
 }
