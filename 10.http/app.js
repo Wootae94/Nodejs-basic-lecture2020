@@ -15,6 +15,7 @@ http.createServer((req, res) => {
                 fs.readdir('data', function (error, filelist) {
                     let list = template.listGen(filelist);
                     let content = template.HOME_CONTENTS;
+                    content = content.replace(/\n/g,"<br>")
                     let control = template.buttonGen();
                     let html = view.index('Web 기술', list, content, control);
                     res.end(html);
@@ -26,6 +27,7 @@ http.createServer((req, res) => {
                     let control = template.buttonGen(title);
                     let filename = 'data/' + title + '.txt'
                     fs.readFile(filename, 'utf8', (error, buffer) => {
+                        buffer=buffer.replace(/\n/g, "<br >")
                         let html = view.index(title, list, buffer, control);
                         res.end(html);
                     });
